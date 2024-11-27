@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot RAG</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="chat-container">
+        <aside class="sidebar">
+            <div class="user-profile">
+                <img src="{{ url_for('static', filename='fametro-avatar.png') }}" alt="Avatar">
+                <!--<p>User Name</p> -->
+            </div>
+            <div class="chat-list">
+                <div class="chat-item active">
+                    <img src="{{ url_for('static', filename='user-avatar.png') }}" alt="Avatar">
+                    <div class="chat-info">
+                        <p class="chat-name">Chatbot</p>
+                        <p class="chat-preview">Faça uma pergunta sobre a instituição FAMETRO.</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        
+        <main class="chat-box">
+            <div class="chat-header">
+                <h2>IA Generativa - FAMETRO</h2>
+                <!--<button id="reloadDocs" onclick="reloadDocuments()">Recarregar Documentos</button>-->
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <!-- Mensagens do chat serão exibidas aqui -->
+            </div>
+            <div class="chat-input">
+                <input type="text" id="messageInput" placeholder="Digite sua pergunta...">
+                <button onclick="sendMessage()">Enviar</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
